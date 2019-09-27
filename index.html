@@ -9,7 +9,32 @@
   <body>
     <h2>List of messages:</h2>
     <div>
-      <ul></ul>
+      <ul id="display"></ul>
     </div>
+    <script>
+      let ws_connection = new WebSocket("ws://localhost:3000/websocket");
+      let display = document.getElementById("display");
+
+      ws_connection.onopen = () => {
+        ws_connection.send("Send me the message");
+      };
+
+      ws_connection.onclose = event => {
+        console.log("WebSocket Connection is closed", event);
+      };
+
+      ws_connection.onerror = error => {
+        console.log("WebSocket Error", error);
+      };
+
+      ws_connection.onmessage = event => {
+        let message_array = JSON.parse(event.data.toString());
+        let content = "";
+        message_array.forEach(msg => {
+          content += `<li>${msg}</li>`;
+        });
+        display.innerHTML = content;
+      };
+    </script>
   </body>
 </html>
