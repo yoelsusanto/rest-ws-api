@@ -1,4 +1,4 @@
-# REST API and WebSocket
+REST API and WebSocket
 
 Simple program to demonstrate message passing using REST API and WebSocket connection.
 
@@ -8,15 +8,8 @@ Simple program to demonstrate message passing using REST API and WebSocket conne
 
 Before you can proceed, you must prerequisites have software installed in your computer:
 
-- Package manager such as 
-
-  [npm]: https://www.npmjs.com/
-
-   or 
-
-  [yarn]: https://yarnpkg.com/lang/en/
-
-- [Node]: https://nodejs.org/en/
+- Package manager such as [npm](https://www.npmjs.com/)  or [yarn](https://yarnpkg.com/lang/en/ )
+- JavaScript Runtime [node js](https://nodejs.org/en/)
 
 ### Installation
 
