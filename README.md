@@ -1,4 +1,4 @@
-REST API and WebSocket
+# REST API and WebSocket
 
 Simple program to demonstrate message passing using REST API and WebSocket connection.
 
