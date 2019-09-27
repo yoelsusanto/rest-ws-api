@@ -30,7 +30,7 @@ express_app.get("/", (req, res) => {
 });
 
 express_app.get("/message", (req, res) => {
-  res.json(message_list);
+  res.json({ messages: message_list });
 });
 
 express_app.post("/message", (req, res) => {
@@ -39,7 +39,7 @@ express_app.post("/message", (req, res) => {
 
   // alternatively can use broadcast
   ws_connections.forEach(connection => {
-    connection.send(JSON.stringify(message_list));
+    connection.send(JSON.stringify({ messages: message_list }));
   });
 
   res.json({ success: true });

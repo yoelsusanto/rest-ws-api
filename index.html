@@ -28,7 +28,9 @@
       };
 
       ws_connection.onmessage = event => {
-        let message_array = JSON.parse(event.data.toString());
+        let data = JSON.parse(event.data.toString());
+        console.log(data);
+        let message_array = data.messages;
         let content = "";
         message_array.forEach(msg => {
           content += `<li>${msg}</li>`;
